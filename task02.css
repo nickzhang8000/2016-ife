@@ -25,11 +25,11 @@ body {
     font-size: 62.5%;
 }
 
-/*.cf::after {*/
-    /*content: "";*/
-    /*display: table;*/
-    /*clear: both;*/
-/*}*/
+.cf::after {
+    content: "";
+    display: table;
+    clear: both;
+}
 /*end of reset*/
 
 
@@ -40,11 +40,23 @@ body {
 	height: 60px;
 	background-color: #000;
 }
+/*
+ *利用幽灵伪元素辅助垂直居中，.ghost伪元素加到需要垂直居中子元素的父元素上，同时设置父元素position:relative
+ *同时设置子元素vertical-align:middle，display:inline-block
+*/
+.ghost:before {
+    content: "";
+    display: inline-block;
+    height: 100%;
+    width: 30px;
+    vertical-align: middle;
+}
 .header > a {
     display: inline-block;
-    position: absolute;
-    left: 40px;
-    bottom: 1px;
+    vertical-align: middle;
+    /*position: absolute;*/
+    /*left: 40px;*/
+    /*bottom: 1px;*/
     background: url("http://7xrwo9.com1.z0.glb.clouddn.com/xhp_logo.png") no-repeat;
     width: 100px;
     height: 50px;
@@ -68,66 +80,75 @@ body {
 
 
 /*start of body*/
-.article {
+.main-primary {
+    /*float: left;*/
+    overflow: hidden;
+}
+article {
     margin: 20px;
     padding: 20px;
     box-shadow: 2px 2px 1px #999;
     background-color: #fff;
 }
-.article h1 {
+article h1 {
     margin-bottom: 20px;
     font-size: 2rem;
     color: #c71585;
 }
-.article h2 {
+article h2 {
      margin-bottom: 15px;
      font-size: 1.6rem;
     color: #7fff00;
  }
-.article span {
+article span {
     font-size: 0.8rem;
     color: #6495ed;
 }
-.article p {
+article p {
      margin-bottom: 10px;
      font-size: 1.2rem;
     text-indent: 2em;
  }
-.article p > a {
+article p > a {
     color: #e5970f;
     text-decoration: underline;
 }
-.article p + img {
+article p + img {
+    display: block;
     margin-bottom: 10px;
     border: 2px solid #555;
-    width: 400px;
+    max-width: 100%;
     height: auto;
 }
-.article > div {
+article > div {
     margin-bottom: 10px;
 }
-.article ul li {
+article ul li {
     line-height: 1.5;
     font-size: 1rem;
 }
-.article ul li:nth-child(2n+1) {
+article ul li:nth-child(2n+1) {
     color: #006400;
 }
-.article .img {
-    width: 200px;
-    padding: 10px;
+article .img {
+    /*font-size: 0;*/
+    float: left;
+    /*width: 150px;*/
+    /*padding: 10px;*/
+    margin: 5px;
     border: 1px solid #999;
 }
-.article .img img {
-    width: 200px;
+article .img img {
+    display: block;
+    width: 150px;
     height: auto;
 }
-.article ol {margin-bottom: 10px;}
-.article ol li {
+article ol {margin-bottom: 10px;}
+article ol li {
     line-height: 1.5;
     font-size: 1rem;
 }
-.article table {
+article table {
     width: 100%;
     border: 1px solid #000;
     line-height: 2;
@@ -135,36 +156,42 @@ body {
     text-align: center;
     vertical-align: middle;
 }
-.article table caption {
+article table caption {
     font-size: 1.6rem;
     font-weight: 700;
     color: #00f;
 }
-.article table th {
+article table th {
     background-color: #6495ed;
 }
-.article table tr:nth-child(2n) {
+article table tr:nth-child(2n) {
     color: #fff;
     background-color: #00f;
 }
-.article table tr:nth-child(2n+1) {
+article table tr:nth-child(2n+1) {
     color: #333;
     background-color: #aaa;
 }
 /*以后的侧边栏*/
-.aside {
+aside {
+    float: right;
+    width: 250px;
     margin: 20px;
     padding: 20px;
     box-shadow: 2px 2px 1px #999;
     background-color: #fff;
 }
-.aside h1 {
+aside h1 {
     margin-bottom: 20px;
     border-left: 4px solid #e5970f;
     font-size: 2rem;
     color: #c71585;
 }
-.aside form input {
+aside textarea {
+    width: 240px;
+    height: 200px;
+}
+aside form input {
     border: 1px solid #999;
 }
 .form-group {
@@ -176,15 +203,17 @@ body {
 */
 .form-group span {
     display: inline-block;
-    width: 30%;
+    /*width: 30%;*/
     margin-right: 20px;
+    margin-bottom: 10px;
     text-align: right;
 }
 .form-hint {
-    width: 46%;
+    /*width: 46%;*/
     margin-bottom: 20px;
     color: #999;
-    text-align: right;
+    /*text-align: right;*/
+    text-align: left;
 }
 .button {
     display: block;

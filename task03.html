@@ -1,0 +1,194 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <title>task03三栏式布局</title>
+    <style>
+        /*body {*/
+            /*padding: 20px;*/
+            /*min-width: 460px;*/
+        /*}*/
+        /** {*/
+            /*margin: 0;*/
+            /*padding: 0;*/
+        /*}*/
+        /*.container {*/
+
+            /*padding: 20px 160px 20px 240px;*/
+            /*border: 1px solid #999;*/
+            /*background-color: #eee;*/
+        /*}*/
+
+        /*.left img {*/
+            /*float: left;*/
+            /*padding: 20px;*/
+        /*}*/
+        /*.left h6 {*/
+            /*display: inline-block;*/
+            /*margin-top: 20px;*/
+            /*width: 60px;*/
+            /*font-size: 19px;*/
+        /*}*/
+
+
+        /*.right img {*/
+            /*padding-bottom: 20px;*/
+        /*}*/
+        /*.top-padding {*/
+            /*padding-top: 20px;*/
+        /*}*/
+
+        /*.cf:after {*/
+            /*content: " ";*/
+            /*display: block;*/
+            /*clear: both;*/
+        /*}*/
+        /*.main {*/
+            /*box-sizing: border-box;*/
+            /*float: left;*/
+            /*width: 100%;*/
+            /*padding: 20px;*/
+            /*border: 1px solid #000;*/
+            /*background-color: #fff;*/
+        /*}*/
+        /*.left {*/
+            /*box-sizing: border-box;*/
+            /*float: left;*/
+            /*width: 200px;*/
+            /*margin-left: -100%;*/
+            /*position: relative;*/
+            /*left: -220px;*/
+            /*border: 1px solid #000;*/
+            /*background-color: #fff;*/
+
+        /*}*/
+        /*.right {*/
+            /*box-sizing: border-box;*/
+            /*float: left;*/
+            /*width: 120px;*/
+            /*margin-left: -120px;*/
+            /*position: relative;*/
+            /*text-align: center;*/
+            /*right: -140px;*/
+            /*border: 1px solid #000;*/
+            /*background-color: #fff;*/
+        /*}*/
+
+        * {
+            margin: 0;
+            padding: 0;
+        }
+        body {
+            padding: 20px;
+        }
+        .cf:after {
+            content: " ";
+            display: block;
+            clear: both;
+        }
+
+        .container, .main,.main-warp, .left, .right {
+            box-sizing: border-box;
+            background-color: #fff;
+            border: 1px solid #000;
+            padding: 20px;
+        }
+        .container {
+            display: -webkit-flex;
+            display: flex;
+            background-color: #eee;
+            align-items: flex-start;
+            /*padding: 20px 160px 20px 240px;*/
+        }
+        .main {
+            -webkit-flex: 1;
+            flex: 1;
+            margin: 0 20px;
+        }
+        .left {
+            width: 200px;
+        }
+        .right {
+            width: 120px;
+        }
+        /*.main {*/
+            /*float: left;*/
+            /*width: 100%;*/
+        /*}*/
+        /*.main-warp {*/
+            /*margin: 0 140px 0 220px;*/
+        /*}*/
+        /*.left {*/
+            /*float: left;*/
+            /*width: 200px;*/
+            /*margin-left: -100%;*/
+            /*!*position: relative;*!*/
+            /*!*left: -220px;*!*/
+        /*}*/
+        .left img {
+            float: left;
+
+        }
+        .left h6 {
+            display: inline-block;
+            position: relative;
+            right: -20px;
+        }
+        /*.right {*/
+            /*float: left;*/
+            /*width: 120px;*/
+            /*margin-left: -120px;*/
+            /*!*position: relative;*!*/
+            /*!*right: -140px;*!*/
+        /*}*/
+        .right img {
+            margin-bottom: 20px;
+        }
+        .right img:last-child {
+            margin-bottom: 0;
+        }
+    </style>
+</head>
+<body>
+<div class="container cf">
+        <div class="left">
+        <img src="http://7xrwo9.com1.z0.glb.clouddn.com/logo.jpg">
+        <h6>左边是logo</h6>
+    </div>
+        <div class="main">
+            <!--<div class="main-warp">-->
+                <h1>IFE春季班第一阶段任务</h1>
+                <p>
+                    第一阶段的主要目标是帮助大家 了解、认识、学习、掌握HTML及CSS。
+                    第一阶段任务从 3月14日 开始，持续到4月3日。当然，您也可以在这个时间以后继续自行实践练习。
+                </p>
+                <h3>第一阶段任务一共有 12 个题目，如下：</h3>
+                <p> 任务一：面向零基础的HTML代码编写
+                    任务二：基于任务1的HTML代码，实现简单的CSS代码编写
+                    任务三：HTML、CSS布局入门，三栏式布局的实践
+                    任务四：HTML、CSS布局深入，定位和居中问题的实践
+                    任务五：基于任务1的HTML代码，实现一个稍微复杂的CSS代码编写
+                    任务六：按照设计图，通过HTML/CSS实现一个像报纸杂志一样的页面布局排版
+                    任务七：按照设计图，通过HTML/CSS实现一个产品官网
+                    任务八：网格/栅格化布局学习与实践
+                </p>
+                <h2> 这十二个任务并非所有人都要去完成，而是需要大家按照自己当前的能力水平来合理评估和选择。</h2>
+                <p> 对于零基础的同学而言，建议路径为：任务1-2-3-4-5-6/7（/表示或）
+                    对于有一定基础，但没做过完整页面的同学，建议路径为：3-4-5-6/7-8-9
+                    对于有过页面实践，但没做过太复杂页面的同学，建议路径为：3-4-6/7-8-9
+                    对于已经经验很丰富的同学，可以直接做：7-9
+                    任务10-11提供给对移动端开发有兴趣的同学进行挑战
+                    任务12提供给初学者，并且对CSS 3各种新特性有兴趣的同学进行挑战
+                </p>
+            <!--</div>-->
+        </div>
+        <div class="right">
+            <img class="top-padding" src="http://7xrwo9.com1.z0.glb.clouddn.com/logo.jpg" alt="">
+            <img src="http://7xrwo9.com1.z0.glb.clouddn.com/logo.jpg" alt="">
+            <img src="http://7xrwo9.com1.z0.glb.clouddn.com/logo.jpg" alt="">
+            <img src="http://7xrwo9.com1.z0.glb.clouddn.com/logo.jpg" alt="">
+        </div>
+
+</div>
+</body>
+</html>
