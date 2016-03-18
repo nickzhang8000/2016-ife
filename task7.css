@@ -1,0 +1,109 @@
+/* start of reset*/
+ul,li {
+    list-style: none;
+}
+a {
+    text-decoration: none;
+}
+/*end of reset*/
+
+
+
+.container {
+    min-width: 1280px;
+    background-color: #fff;
+    font-family: "Microsoft Yahei";
+}
+/*start of header*/
+header {
+    position: relative;
+    height: 57px;
+    padding: 0 24px 0 59px;
+    /*background-color: #7fff00;*/
+}
+/*logo图标和文字*/
+.logo {
+    display: inline-block;
+    background: url("img/logo.png") no-repeat;
+    width: 31px;
+    height: 31px;
+    vertical-align: middle;
+}
+.logo + span {
+    display: inline-block;
+    font-size: 21px;
+    vertical-align: middle;
+    font-weight: 500;
+}
+/*ghost伪元素加在父元素身上实现垂直居中，同时设置父元素的position:relative 子元素vertical-align:middle*/
+.ghost:after {
+    content: " ";
+    display: inline-block;
+    height: 100%;
+    vertical-align: middle;
+    width: 1%;
+}
+/*导航栏*/
+nav {
+    position: absolute;
+    right: 59px;
+    top: 0;
+}
+nav a {
+    font-size: 14px;
+    color: #787b83;
+    float: left;
+    padding: 18px 22px;
+}
+nav a:hover {
+    color: #e74f4d;
+    border-bottom: 4px solid #e74f4d;
+}
+.login {
+    position: relative;
+}
+.login img {
+    background: url("img/login.png") no-repeat;
+    width: 14px;
+    height: 17px;
+    position: absolute;
+    left: -2px;
+}
+
+
+/*end of header*/
+/*横幅广告*/
+.banner {
+    background: url("img/banner.jpg") no-repeat;
+    width: 1280px;
+    height: 691px;
+}
+.banner-title {
+    position: absolute;
+    top: 229px;
+    left: 116px;
+    color: #fff;
+}
+.banner-title h1 {
+    font-size: 60px;
+    font-weight: 400;
+    margin-bottom: 20px;
+}
+.banner-title p {
+    margin: 0 0 66px 10px;
+    width: 294px;
+    font-size: 21px;
+    line-height: 30px;
+}
+.banner-title a {
+    display: inline-block;
+    margin-left: 10px;
+    font-size: 30px;
+    width: 331px;
+    height: 60px;
+    line-height: 60px;
+    text-align: center;
+    background-color: #e8504f;
+    color: #fff;
+
+}
