@@ -12,6 +12,12 @@ a {
     display: block;
     clear: both;
 }
+.fl {
+    float: left;
+}
+.fr {
+    float: right;
+}
 /*end of reset*/
 
 
@@ -174,6 +180,7 @@ nav a:hover {
     margin: 0 auto;
     height: 10px;
 }
+
 .find-world > p {
     font-size: 12px;
     margin-bottom: 50px;
@@ -255,6 +262,354 @@ nav a:hover {
     position: absolute;
     left: 9px;
     top: 13px;
-    /*vertical-align: middle;*/
     background: url("img/checked.png") no-repeat;
+}
+/*画廊展示*/
+.gallery {
+    background-color: #f7f7f7;
+    text-align: center;
+    margin: 0 auto;
+}
+.gallery div {
+    vertical-align: top;
+    display: inline-block;
+    margin: 80px 14px;
+    font-size: 12px;
+}
+.gallery img {
+    width: 202px;
+    height: 312px;
+    padding: 10px 8px;
+    border: 1px solid #ddd;
+    background-color: #fff;
+}
+.gallery h2,
+.gallery h4,
+.gallery p {
+    margin: 0;
+}
+.gallery h4 {
+    font-size: 14px;
+    padding: 8px;
+}
+.gallery p {
+    color: #999;
+    padding-bottom: 10px;
+}
+.gallery h2 {
+    font-size: 24px;
+    padding-bottom: 2px;
+    letter-spacing: 35px;
+    margin-right: -27px;
+    font-weight: 400;
+}
+/*新世界TIME*/
+
+.newtime-banner {
+    float: left;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background: url("img/new-time.jpg") no-repeat;
+    width: 66.67%;
+    height: 566px;
+    text-align: center;
+}
+.newtime-info {
+    color: #fff;
+}
+.newtime-info h4 {
+    font-size: 50px;
+    margin: 0;
+}
+.newtime-info h2 {
+    font-size: 158px;
+    margin: -40px 0 -15px ;
+}
+.newtime-info p {
+    font-size: 22px;
+    text-align: left;
+    display: inline-block;
+    margin: 0 auto;
+    line-height: 40px;
+}
+.newtime-detail {
+    float: left;
+    text-align: center;
+    width: 33.33%;
+    height: 566px;
+}
+.newtime-detail h3 {
+    margin-top: 170px;
+    font-weight: 400;
+    letter-spacing: 2px;
+}
+.newtime-detail span {
+    color: #ea4f4d;
+}
+.newtime-detail p {
+    font-size: 12px;
+    line-height: 2.5;
+    color: #aaaaaa;
+    padding: 0 65px;
+    text-align: justify;
+}
+.newtime-detail h5 {
+    display: inline-block;
+    padding: 7px 25px;
+    color: #ea4f4d;
+    border: 1px solid #ea4f4d;
+    font-size: 14px;
+    font-weight: 400;
+}
+.newtime-detail img {
+    margin: 0 5px;
+}
+/*新时代关于我们的生活*/
+.new-age > div {
+    width: 33.333%;
+    height: 519px;
+    float: left;
+    text-align: center;
+    font-size: 18px;
+}
+.card-1,
+.card-2 {
+    display: table;
+}
+.card-1 {
+    background-color: #ea4f4d;
+    color: #fff;
+}
+.card-2 {
+    background-color: #fff;
+    /*color: #ea4f4d;*/
+}
+.card-3 {
+    position: relative;
+    background: url("img/girl_05.jpg") no-repeat;
+}
+.card-child {
+    display: table-cell;
+    vertical-align: middle;
+    text-align: center;
+}
+.card-child p {
+    margin: 5px;
+}
+.card-1 h3 {
+    font-weight: 400;
+    display: inline-block;
+    padding: 4px 30px;
+    border: 1px solid #fff;
+}
+.card-2 h3 {
+    font-weight: 400;
+    display: inline-block;
+    padding: 4px 30px;
+    border: 1px solid #ea4f4d;
+    color: #ea4f4d;
+}
+.subline-2:after {
+    content: "";
+    width: 30px;
+    display: block;
+    margin: 0 auto;
+    height: 20px;
+    border-bottom: 2px solid #fff;
+}
+.subline-3:after {
+    content: "";
+    width: 30px;
+    height: 20px;
+    display: block;
+    margin: 0 auto;
+    border-bottom: 2px solid #999;
+}
+.triangle {
+    position: absolute;
+    margin: auto;
+    top: 0;
+    bottom: 0;
+    width: 0;
+    height: 0;
+    border-left: 30px solid #fff;
+    border-bottom: 14px solid transparent;
+    border-top: 14px solid transparent;
+}
+/*志愿者招募*/
+.volunteer {
+    text-align: center;
+    margin: 0 150px;
+}
+.volunteer-info {
+    margin: 100px 0;
+}
+.volunteer-info p {
+    color: #787b83;
+    font-size: 12px;
+    width: 43%;
+    margin: 0 auto;
+}
+.subline-red:after {
+    content: "";
+    width: 30px;
+    height: 10px;
+    display: block;
+    margin: 0 auto;
+    border-bottom: 2px solid #ea4f4d;
+}
+
+.volunteer-detail {
+    box-sizing: border-box;
+    float: left;
+    width:  33.333%;
+    padding: 0 18px;
+    text-align: left;
+    color: #666;
+}
+.volunteer-detail h4 {
+    margin: 0;
+    font-weight: 400;
+}
+.volunteer-detail p {
+    font-size: 12px;
+    margin: 25px 0 0;
+    color: #787b83;
+}
+.volunteer-detail p span {
+    letter-spacing: 5px;
+}
+.more {
+    text-align: right;
+    font-size: 12px;
+    color: #787b83;
+    margin-bottom: 15px;
+}
+.more img {
+    margin-right: 10px;
+}
+.volunteer-form {
+    box-sizing: border-box;
+    float: left;
+    width: 66.667%;
+    font-size: 12px;
+    margin-bottom: 150px;
+    padding-left: 50px;
+}
+
+.user-default {
+    background-color: #ededef;
+    margin-bottom: 14px;
+    width: 48.5%;
+    text-align: left;
+    height: 40px;
+    line-height: 40px;
+
+}
+.user-default  label{
+    padding: 10px;
+    width: 20%;
+}
+.user-default  input {
+    width: 75%;
+    background-color: #ededef;
+    outline: none;
+    border: 0;
+}
+.user-describe  {
+    position: relative;
+    float: left;
+    width: 100%;
+    height: 100px;
+    margin-bottom: 15px;
+    background-color: #ededef;
+    text-align: left;
+    font-size: 0;
+}
+.user-describe label {
+    font-size: 12px;
+    display: block;
+    padding: 10px 0 0 10px;
+}
+.user-describe textarea {
+    width: 99%;
+    height: 70px;
+    border: 0;
+    outline: none;
+    resize: none;
+    background-color: #ededef;
+}
+.volunteer-form button {
+    width: 100%;
+    padding: 10px;
+    border: 0;
+    font-size: 14px;
+}
+
+
+/*start of footer*/
+.contact-us {
+    background-color: #32353e;
+    display: table;
+    width: 100%;
+    height: 380px;
+    text-align: center;
+    color: #fff;
+}
+.contact-us-child {
+    display: table-cell;
+    vertical-align: middle;
+}
+.contact-us-child {
+    font-size: 12px;
+}
+.contact-us-child p {
+    padding: 0 400px;
+}
+.contact-us-child img {
+    margin: 15px 10px;
+}
+.contact-us-child form {
+    font-size: 0;
+    height: 40px;
+    line-height: 40px;
+    vertical-align: middle;
+    margin: 25px 0;
+}
+.contact-us-child input {
+    font-size: 16px;
+    width: 430px;
+    padding: 12px 0;
+    border: none;
+    outline: none;
+}
+.contact-us-child button {
+    background-color: #717179;
+    width: 80px;
+    font-size: 16px;
+    border: none;
+    display: inline-block;
+    margin: 0 auto;
+    display: inline-block;
+    /*letter-spacing: 8px;*/
+    /*word-spacing: .4em;*//*只对input的value有效*/
+}
+
+
+.footer-back {
+    position: relative;
+    background-color: #2f3038;
+    height: 60px;
+    line-height: 60px;
+    color: #fff;
+    font-size: 12px;
+}
+.footer-back span {
+    margin-left: 100px;
+}
+.footer-back a {
+    position: absolute;
+    right: 30px;
+    color: #fff;
 }
