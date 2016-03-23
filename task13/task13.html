@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>task13</title>
+</head>
+<body>
+
+<label>请输入北京今天空气质量：<input id="aqi-input" type="text"></label>
+<button id="button">确认填写</button>
+
+<div>您输入的值是：<span id="aqi-display">尚无录入</span></div>
+
+<script type="text/javascript">
+
+    (function() {
+        /*
+         在注释下方写下代码
+         给按钮button绑定一个点击事件
+         在事件处理函数中
+         获取aqi-input输入的值，并显示在aqi-display中
+         */
+
+
+        //获取三个id并分别存入3个变量里
+        var input = document.getElementById("aqi-input");
+        var btn = document.getElementById("button");
+        var output = document.getElementById("aqi-display");
+        //定义一个函数，把input框里的内容赋给span元素
+        function innerOut() {
+            output.innerHTML = input.value;
+        }
+        //定义一个对象，添加事件处理方法，用函数分装方便调用，利用if-else能力测试，兼容ie
+        var eventHandle = {
+            addHandler: function(element, event, listener) {
+                if(element.addEventListener) {
+                    element.addEventListener(event, listener, false);
+                }else if(element.attachEvent) {
+                    element.attachEvent('on'+ event, listener);
+                }else{
+                    element['on' + event] = listener;
+                }
+            }
+        };
+        // 调用对象的方法
+        eventHandle.addHandler(btn, 'click', innerOut);
+    })();
+
+</script>
+</body>
+</html>
