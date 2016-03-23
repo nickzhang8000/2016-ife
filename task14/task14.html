@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8">
+    <title>task14</title>
+</head>
+<body>
+
+<h3>污染城市列表</h3>
+<ul id="aqi-list">
+    <!--
+        <li>第一名：福州（样例），10</li>
+          <li>第二名：福州（样例），10</li> -->
+</ul>
+
+<script type="text/javascript">
+
+    var aqiData = [
+        ["北京", 90],
+        ["上海", 50],
+        ["福州", 10],
+        ["广州", 50],
+        ["成都", 90],
+        ["西安", 100]
+    ];
+//    console.log(aqiData[0]);
+//    console.log(aqiData[4]);
+//    console.log(aqiData[5]);
+    (function () {
+
+        /*
+         在注释下方编写代码
+         遍历读取aqiData中各个城市的数据
+         将空气质量指数大于60的城市显示到aqi-list的列表中
+         */
+
+        //创建一个新的数组，用于存放符合条件的城市和数据
+        var myArr = [];
+        //循环遍历材料里给的数组，通过if条件判断，把符合条件的数据push到新的数组里
+        for (var i = 0; i < aqiData.length; i++) {
+            if (aqiData[i][1] > 60) {
+                myArr.push(aqiData[i]);
+            }
+        }
+
+        // 检查生成的数组是否正确
+//        for (var j = 0; j < myArr.length; j++) {
+//            console.log(myArr[j][0] + myArr[j][1] + "<br>");
+//        }
+
+        // 通过sort方法比较大小，排序，a>b升序，a<b降序，这里因为myArr是个数组，所以取a[1]、b[1]做比较
+        myArr.sort(function(a,b){
+            return b[1]-a[1];
+        })
+
+        // 循环遍历新生成的函数，通过.createElement、.createTextNode、.appendChild的方法在ul下创建新的li列表
+        for (var i =0; i < myArr.length; i++) {
+            var oUl = document.getElementById("aqi-list");
+            var oLi = document.createElement("li");
+            var ranking = i +1;
+            var txt = document.createTextNode("第" + ranking + "名：" + myArr[i][0] +"," + myArr[i][1]);
+            oLi.appendChild(txt);
+//            var txt = "第" + ranking + "名：" + myArr[i][0] +"," + myArr[i][1] + "<br>"
+//            oLi.innerHTML= txt;
+            oUl.appendChild(oLi)
+        }
+        
+    })();
+
+</script>
+</body>
+</html>
