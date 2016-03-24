@@ -1,43 +1,66 @@
 <!DOCTYPE html>
-<html lang="en">
+<html>
 <head>
-    <meta charset="UTF-8">
-    <title>Title</title>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width">
+    <title>JS Bin</title>
+    <style>
+        .container {
+            width: 100%;
+        }
+        .progress-bar {
+            counter-reset: section;
+        }
+        .progress-bar li {
+            list-style-type: none;
+            float: left;
+            width: 33%;
+            text-align: center;
+            position: relative;
+        }
+        .progress-bar li::before {
+            content: counter(section);
+            counter-increment: section;
+            height: 30px;
+            line-height: 30px;
+            width: 30px;
+            display: block;
+            margin: 0 auto 5px auto;
+            border: 1px solid red;
+            border-radius: 50%;
+            background-color: #fff;
+        }
+        .progress-bar li:after {
+            content: " ";
+            width: 100%;
+            height: 1px;
+            background: red;;
+            position: absolute;
+            top: 15px;
+            left: -50%;
+            z-index: -1;
+        }
+        .progress-bar li:first-child:after {
+            content: none;
+        }
+        .active {
+            color: #7fff00;
+        }
+        .progress-bar li.active:before {
+            border-color: #7fff00;
+        }
+        .progress-bar li.active + li:after {
+            background-color: #7fff00;
+        }
+    </style>
 </head>
 <body>
-
-<input type="button" value="你敢点我吗" id="btn1"/>
-<input type="button" value="btn2" id="btn2"/>
-
-<script>
-    var btn1 = document.getElementById("btn1");
-    var btn2 = document.getElementById("btn2");
-    function show() {
-//        alert("hello world!");
-        btn2.value = "点我";
-    }
-    var EventUtil = {
-        addHandler: function(element, type, handler) {
-            if (element.addEventListener) {
-                element.addEventListener(type, handler, false);
-            } else if (element.attachEvent) {
-                element.attachEvent("on" + type, handler);
-            } else {
-                element["on" + type] = handler;
-            }
-        }
-//        removeHandler: function(element, type, handler) {
-//            if (element.removeEventListener) {
-//                element.removeEventListener(type, handler, false);
-//            } else if(element.detachEvent) {
-//                element.detachEvent("on" + type, handler);
-//            } else {
-//                element["on" + type] = handler;
-//            }
-//        }
-    };
-    EventUtil.addHandler(btn1, 'click', show);
-//    EventUtil.removeHandler(btn1, 'click', show);
-</script>
+<div class="container">
+    <ul class="progress-bar">
+        <li class="active">step 1</li>
+        <li>step 2</li>
+        <li>step 3</li>
+    </ul>
+</div>
 </body>
 </html>
