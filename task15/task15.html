@@ -38,7 +38,7 @@
         var data = [];
         var source = document.getElementById("source");
         var arrLi = source.getElementsByTagName("li");
-        console.log(arrLi[0].innerHTML);
+//        console.log(arrLi[0].innerHTML);
         var city = '';
         var air = '';
         for (var i = 0; i < arrLi.length; i++) {
@@ -47,7 +47,7 @@
             air = parseInt(arrLi[i].getElementsByTagName("b")[0].innerHTML);
             data.push([city, air]);
         }
-        console.log(data);
+//        console.log(data);
         return data;
     }
 
@@ -96,9 +96,9 @@
         // 在这下面给sort-btn绑定一个点击事件，点击时触发btnHandle函数
         var btn = document.getElementById("sort-btn");
         var addHandler = function(elt, type, handler) {
-            if (addEventListener) {
+            if (elt.addEventListener) {
                 elt.addEventListener(type, handler, false);
-            } else if (attachEvent) {
+            } else if (elt.attachEvent) {
                 elt.attachEvent('on' + type, handler);
             } else {
                 elt['on' + type] = handler;
