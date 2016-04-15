@@ -4,97 +4,18 @@
     <meta charset="UTF-8">
     <title>Title</title>
     <style>
-        #win {
-            display: none;
-            position: fixed;
-            top: 50%;
-            left: 50%;
-            width: 400px;
-            height: 200px;
-            margin-left: -200px;
-            margin-top: -100px;
-            border: 3px solid red;
-        }
-        #win h2 {
-            margin-top: 0;
-            background: green;
-            padding: 10px 0;
-        }
-        #win span {
-            margin-left: 200px;
-        }
-        #content div{
-            position: absolute;
-            right: 10px;
-            bottom: 10px;
-        }
-        #content button {
-            background: green;
-            padding: 10px 15px;
-            color: white;
-        }
-        #mask {
-            display: none;
-            position: fixed;
-            height: 100%;
-            width: 100%;
-            background: green;
-            opacity: 0.3;
-        }
-        body {
-            height: 1200px;
-        }
+
     </style>
 </head>
 <body>
-<div id="win">
-    <h2>这是一个弹出层<span>×</span></h2>
-    <div id="content">
-        <p>这是一个弹出层</p>
-        <div>
-            <button>确认</button>
-            <button>取消</button>
-        </div>
-    </div>
-</div>
-<div id="mask"></div>
-<button>click me</button>
+<p id="abc"></p>
 <script>
-    var win = document.getElementById("win");
-    var close = document.getElementsByTagName("span")[0];
-    console.log(close);
-    var confirm = document.getElementsByTagName("button")[0];
-    var cancel = document.getElementsByTagName("button")[1];
-    var click = document.getElementsByTagName("button")[2];
-    var mask = document.getElementById("mask");
+    var abc = document.getElementById("abc");
 
-    // 创建eventUtil对象
-    var eventUtil = {
-        // 添加
-        addHandler: function(elt, type, handler) {
-            if (elt.addEventListener) {
-                elt.addEventListener(type, handler, false);
-            } else if (elt.attachEvent) {
-                elt.attachEvent("on" + type, handler);
-            } else {
-                elt["on" + type] = handler;
-            }
-        }
-    };
 
-    function setBlock() {
-        win.style.display = "block";
-        mask.style.display = "block";
-    }
-    function setNone() {
-        win.style.display = "none";
-        mask.style.display = "none";
-    }
-
-    eventUtil.addHandler(click, "click", setBlock);
-    eventUtil.addHandler(close, "click", setNone);
-    eventUtil.addHandler(cancel, "click", setNone);
-
+    document.getElementById("abc").innerHTML = "<h2>" + "bye world" + "</h2>";
+    document.write("<h1>" + "hello world" + "</h1>");
+    document.write("<h1>" + "lalala world" + "</h1>");
 </script>
 </body>
 </html>
